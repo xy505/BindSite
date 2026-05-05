@@ -1,0 +1,42 @@
+# 安装PyTorch 1.7.1 + torchvision + CUDA 11.0（方案模型核心框架）
+conda install pytorch=1.7.1 torchvision cudatoolkit=11.0 -c pytorch -y
+conda install pytorch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=12.4 -c pytorch -c nvidia
+# 1. 安装numpy（方案中矩阵运算核心，选择Python 3.8兼容且无高版本mkl依赖的版本）
+conda install numpy==1.19.5 -c conda-forge -y
+# 2. 安装pandas（方案中标签数据读取/数据集划分，适配numpy 1.19.5）
+conda install pandas==1.2.5 -c conda-forge -y
+# 3. 安装scipy（方案中残基距离计算用cdist函数，规避mkl冲突）
+conda install scipy==1.6.3 -c conda-forge -y
+# 4. 安装scikit-learn（方案中特征标准化、F1/AUC等评估指标计算）
+conda install scikit-learn==0.24.2 -c conda-forge -y
+
+# Biopython（解析PDB结构、处理氨基酸序列，方案数据预处理核心工具）
+conda install biopython==1.79 -c conda-forge -y
+# PDBFixer（修复PDB文件杂原子/溶剂分子，方案数据清理用）
+conda install pdbfixer==1.8 -c conda-forge -y
+# MDAnalysis（辅助计算残基距离，补充接触矩阵计算）
+conda install mdanalysis==2.0.0 -c conda-forge -y
+#Hugging Face Transformers（加载protT5预训练模型，适配PyTorch 1.7.1）
+conda install transformers==4.12.5 -c conda-forge -y
+# Tokenizers（protT5序列编码，避免版本兼容问题）
+conda install tokenizers==0.10.3 -c conda-forge -y
+
+conda install transformers
+# Tokenizers（protT5序列编码，避免版本兼容问题）
+conda install tokenizers
+# Torch-Scatter/Scatter（图卷积必备，适配PyTorch 1.7.1+CUDA 11.0）
+# 安装torch-scatter（适配PyTorch 1.7.1+CUDA 11.0+Python 3.8）
+pip install torch-scatter==2.0.6 -f https://data.pyg.org/whl/torch-1.7.1+cu110.html
+# 安装torch-sparse（适配PyTorch 1.7.1+CUDA 11.0+Python 3.8）
+pip install torch-sparse==0.6.9 -f https://data.pyg.org/whl/torch-1.7.1+cu110.html
+
+pip install sentencepiece==0.1.96
+
+pip install protobuf==3.20.3
+
+
+
+pip install tqdm
+pip install numpy
+pip install scipy
+pip install scikit-learn
